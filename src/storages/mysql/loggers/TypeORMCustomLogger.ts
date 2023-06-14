@@ -99,7 +99,7 @@ export default class TypeORMCustomLogger implements Logger {
 
     const queryAndParameters = getQueryAndParameters(query, parameters);
 
-    log.crit({
+    log.fatal({
       status: httpStatusCodes.GATEWAY_TIMEOUT,
       req_method: 'SYS',
       req_url: 'typeorm://query/error',

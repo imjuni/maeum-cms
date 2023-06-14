@@ -74,7 +74,6 @@ export async function unbootstrap() {
 export function listen(port: number): void {
   log.info({
     status: httpStatusCodes.OK,
-    duration: -1,
     req_method: 'SYS',
     req_url: `${CE_LOG_PROTOCOL.FASTIFY}start/port:${port}/pid:${process.pid}`,
     body: { port, run_mode: config.server.runMode },
@@ -82,9 +81,8 @@ export function listen(port: number): void {
 
   server.listen({ port, host: '0.0.0.0' }, (err, address) => {
     if (err != null) {
-      log.crit({
+      log.error({
         status: httpStatusCodes.INTERNAL_SERVER_ERROR,
-        duration: -1,
         req_method: 'SYS',
         req_url: `${CE_LOG_PROTOCOL.FASTIFY}start/port:${port}/pid:${process.pid}`,
         err_msg: err.message,

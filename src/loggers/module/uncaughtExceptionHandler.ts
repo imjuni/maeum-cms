@@ -9,7 +9,7 @@ export default function bootstrap() {
     log.trace('uncaughtException: ', err.message);
     log.trace('uncaughtException: ', err.stack);
 
-    log.crit({
+    log.fatal({
       status: httpStatusCodes.INTERNAL_SERVER_ERROR,
       req_method: 'SYS',
       req_url: 'uncaughtException',
@@ -23,7 +23,7 @@ export default function bootstrap() {
     const message =
       reason == null ? 'unknown error by [unhandledRejection]' : escapeSafeStringify(reason);
 
-    log.crit({
+    log.fatal({
       status: httpStatusCodes.INTERNAL_SERVER_ERROR,
       req_method: 'SYS',
       req_url: 'unhandledRejection',

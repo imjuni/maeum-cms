@@ -82,6 +82,7 @@ module.exports = {
     ],
   },
   overrides: [
+    // script
     {
       files: ['scripts/**/*.ts', 'scripts/**/*.cjs'],
       rules: {
@@ -90,9 +91,11 @@ module.exports = {
         'no-console': ['off'],
       },
     },
+    // bootstrap code
     {
-      files: ['src/configs/config.ts', 'src/tools/i18n/i18n.ts'],
+      files: ['src/configs/config.ts', 'src/tools/i18n/i18n.ts', 'src/loggers/bootstrap.ts'],
       rules: {
+        '@typescript-eslint/no-unsafe-argument': ['off'],
         '@typescript-eslint/no-unsafe-assignment': ['off'],
       },
     },

@@ -2,8 +2,8 @@ import ajv, { ajvOptions } from '#configs/ajvbox';
 import { addSchema, plainJsonSchema } from '#configs/json-schema';
 import fastJsonStringify, { Options as FJSOptions } from 'fast-json-stringify';
 import fastify, { FastifyInstance, FastifyServerOptions } from 'fastify';
-import { IncomingMessage, Server, ServerResponse, createServer } from 'http';
 import { JSONSchema7 } from 'json-schema';
+import { IncomingMessage, Server, ServerResponse, createServer } from 'node:http';
 import { ReadonlyDeep } from 'type-fest';
 
 type THttpServerFactory = (

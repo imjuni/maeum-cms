@@ -5,7 +5,7 @@ import { bootstrap as httpBootstrap, unbootstrap as httpUnbootstrap, listen } fr
 import {
   bootstrap as mysqlBootstrap,
   unbootstrap as mysqlUnbootstrap,
-} from '#storages/mysql/mysql';
+} from '#storages/mysql/mysqlbox';
 import httpStatusCodes from 'http-status-codes';
 import { isError } from 'my-easy-fp';
 
@@ -36,7 +36,7 @@ export async function start() {
     log.trace(err.message);
     log.trace(err.stack);
 
-    log.crit({
+    log.error({
       status: httpStatusCodes.INTERNAL_SERVER_ERROR,
       req_method: 'SYS',
       req_url: 'app/bootstrap',
