@@ -3,6 +3,7 @@ import { del } from '#/repository/tag';
 import { ApiErrorJsonSchema, ApiValidationErrorJsonSchema } from '@maeum/error-controller';
 import type { FastifyRequest, RouteShorthandOptions } from 'fastify';
 
+// Tag
 export const option: RouteShorthandOptions = {
   schema: {
     tags: ['Tag'],
